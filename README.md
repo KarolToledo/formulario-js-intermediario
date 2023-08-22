@@ -1,10 +1,16 @@
-#Este formulário foi criado com HTML, CSS e JavaScript
+#Formulário
+***
+**Este formulário foi criado com HTML, CSS e JavaScript
 
-#É um formulário com validação, os campos são obrigatórios, se não forem preenchidos, aparece uma mensagem de erro e as bordas ficam na cor vermelha.
+*clique no link para ver o formulário no GitHub pages.
+[Formulário JS intermediário](https://karoltoledo.github.io/formulario-js-intermediario/)
+---
+É um formulário com validação onde os campos são obrigatórios, se não forem preenchidos, aparece uma mensagem de erro e as bordas ficam na cor vermelha.
 Se os campos forem preenchidos corretamente as bordas ficarão na cor verde ao clicar no botão de enviar.
-![Alt text](image.png)
-![Alt text](image-1.png)
-![Alt text](image-2.png)
-
-#Criei também um layout responsivo bem simples
-![Alt text](image-3.png)
+![Formulário](src/imagens/form.png)
+![Formulário com erro](src/imagens/formErro.png)
+![Formulário preenchido corretamente](src/imagens/formSucesso.png)
+***
+##Layout responsivo
+**Criei também um layout responsivo bem simples
+![Alt text](src/imagens/form-responsivo.png)
