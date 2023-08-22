@@ -17,11 +17,11 @@ form.addEventListener('submit', function(event) {
 })
 
  // Validar nome
- function exibirMensagemErroNome(mensagem) {
+let exibirMensagemErroNome = (mensagem) =>{
     erroNome.textContent = mensagem;
     erroNome.classList.add('erro');
 }
-function esconderMensagemErroNome() {
+let esconderMensagemErroNome = function() {
     erroNome.classList.remove('erro');
 }
 
@@ -33,59 +33,52 @@ function validarNome() {
     if(input.value.trim() === ""){
         adicionarClaseErro
         exibirMensagemErroNome('campo obrigatorio')
+        nome.classList.remove('sucesso')
     }else if(input.value !== "") {
+        nome.classList.remove('erro')
         nome.classList.add('sucesso')
         esconderMensagemErroNome()
-    }else {
-        nome.classList.remove('erro')
-        esconderMensagemErroNome()
-}
+    }
 }
 
 // validar email
-
-function exibirMensagemErroEmail(mensagem) {
+const exibirMensagemErroEmail = (mensagem) => {
     erroEmail.textContent = mensagem
     erroEmail.classList.add('erro');
 }
 
-function esconderMensagemErroEmail() {
+const esconderMensagemErroEmail = function() {
     erroEmail.classList.remove('erro');
 }
 
-function validarEmail() {
+function validarEmail () {
     const email = document.querySelector('.email')
     const meuEmail = document.getElementById('email')
+    meuEmail.addEventListener('blur', validarEmail);
 
     if(meuEmail.value.trim() === ""){
         email.classList.add('erro')
         exibirMensagemErroEmail('campo obrigatorio')
-    }else if(!isValidEmail(meuEmail.value)) {
-        email.classList.add('erro')
-        exibirMensagemErroEmail('Email inválido')
-    }else { 
+        email.classList.remove('sucesso')
+    }else if(!isValidEmail(meuEmail.value) !== "") {
         email.classList.remove('erro')
-        esconderMensagemErroEmail()
         email.classList.add('sucesso')
+        esconderMensagemErroEmail()
     }
 }
 
-function isValidEmail(email) { //Função para validar email
+function isValidEmail(email) { //Função para validar  se email é válido
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
 }
 
-const meuEmail = document.getElementById('email');
-meuEmail.addEventListener('blur', validarEmail);
-
-
 // validar telefone
-function exibirMensagemErroTelefone(mensagem) {
+let exibirMensagemErroTelefone = (mensagem) => {
     erroTelefone.textContent = mensagem;
     erroTelefone.classList.add('erro');
 }
 
-function esconderMensagemErroTelefone() {
+const esconderMensagemErroTelefone = function() {
     erroTelefone.classList.remove('erro');
 }
 
@@ -96,22 +89,22 @@ function validarTelefone() {
     if(numeroTelefone.value.trim() === "") {
         telefone.classList.add('erro')
         exibirMensagemErroTelefone('campo obrigatorio')
+        telefone.classList.remove('sucesso')
     }else if(numeroTelefone.value.trim() !== ""){  
+        telefone.classList.remove('erro')
         telefone.classList.add('sucesso')
-        esconderMensagemErroTelefone()
-    }else {
         esconderMensagemErroTelefone()
     }
 
 }
 
 // validar mensagem
-function exibirMensagemErroMensagem(mensagem) {
+const exibirMensagemErroMensagem = (mensagem) => {
     erroMensagem.textContent = mensagem;
     erroMensagem.classList.add('erro');
 }
 
-function esconderMensagemErroMensagem() {
+let esconderMensagemErroMensagem = function() {
     erroMensagem.classList.remove('erro');
 }
 
@@ -119,10 +112,12 @@ function validarMensagem() {
     const mensagem = document.querySelector('.msg')
     const campoMensagem = document.getElementById('mensagem')
 
-    if (campoMensagem.value === "") {
+    if (campoMensagem.value.trim() === "") {
         mensagem.classList.add('erro')
         exibirMensagemErroMensagem('campo obrigatorio')
-    }else {
+        mensagem.classList.remove('sucesso')
+    }else if (campoMensagem.value.trim() !== ""){
+        mensagem.classList.remove('erro')
         mensagem.classList.add('sucesso')
         esconderMensagemErroMensagem()
     }
