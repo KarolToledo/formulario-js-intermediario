@@ -6,8 +6,9 @@
 
 [Formulário JS intermediário](https://karoltoledo.github.io/formulario-js-intermediario/)
 
-<p> É um formulário com validação onde os campos são obrigatórios, se não forem preenchidos, aparece uma mensagem de erro e as bordas ficam na cor vermelha.
-Se os campos forem preenchidos corretamente as bordas ficarão na cor verde ao clicar no botão de enviar.</p>
+<p> Este formulário inclui validação, tornando obrigatório o preenchimento de todos os campos. Caso algum campo seja deixado em branco, uma mensagem de erro será exibida e as bordas ficarão destacadas em vermelho.
+Quando você preencher corretamente todos os campos e clicar no botão 'Enviar', as bordas mudarão de cor para verde, indicando que o envio foi bem-sucedido.
+</p>
 
 ![Formulário](src/imagens/form.png)
 ![Formulário com erro](src/imagens/formErro.png)

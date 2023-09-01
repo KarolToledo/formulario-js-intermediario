@@ -93,7 +93,7 @@
     border-color: #F52E2E;
 }
 
-.obrigatorio.erro{
+.obrigatorio.mostrar-msg-erro{
     display: block;
 }
 
